@@ -19,17 +19,21 @@ def create_question(user)
     end
 end
 
-
-    while(player_1.lives > 0 && player_2.lives > 0)
-        flag = 1
-        current_user = nil
-        puts "--- New  Turn"
-        if flag.even?
-            current_user = player_1
-        else 
-            current_user = player_2 
-        end
-        create_question(current_user)
-        flag +=1
+flag = 0
+while(player_1.lives > 0 && player_2.lives > 0)
+    
+    current_user = nil
+    puts "--- New  Turn ---"
+    
+    if flag.even?
+        current_user = player_1
+    else 
+        current_user = player_2 
     end
+    create_question(current_user)
+    flag +=1
+end
+
+puts "---- Game Over ----"
+puts "goodbye"
 
